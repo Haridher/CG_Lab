@@ -38,26 +38,6 @@ void circlebres()
 }
 int p1_x, p2_x, p1_y, p2_y;
 int point1_done = 0;
-void myMouseFunccircle(int button, int state, int x, int y)
-{
-	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN && point1_done == 0)
-	{
-		p1_x = x - 250;
-		p1_y = 250 - y;
-		point1_done = 1;
-	}
-	else if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
-	{
-		p2_x = x - 250;
-		p2_y = 250 - y;
-		xc = p1_x;
-		yc = p1_y;
-		float exp = (p2_x - p1_x) * (p2_x - p1_x) + (p2_y - p1_y) * (p2_y - p1_y);
-		r = (int)(sqrt(exp));
-		circlebres();
-		point1_done = 0;
-	}
-}
 
 
 /////ELLIPSE/////////////
@@ -192,21 +172,7 @@ void main(int argc, char* argv[])
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(500, 500);
 	glutInitWindowPosition(0, 0);
-	/* 
-	//FOR MOUSE
-	int id1 = glutCreateWindow("Circle");
-	glutSetWindow(id1);
-	glutMouseFunc(myMouseFunccircle);
-	glutDisplayFunc(myDrawingc);
-	minit();
-	glutInitWindowSize(500, 500);
-	glutInitWindowPosition(600, 100);
-	int id2 = glutCreateWindow("Ellipse");
-	glutSetWindow(id2);
-	glutMouseFunc(myMouseFunc);
-	glutDisplayFunc(myDrawing);
-	//END MOUSE 
-	*/ 
+	
 	//FOR KEYBOARD
 	printf("Enter 1 to draw circle , 2 to draw ellipse\n");
 	int ch;
