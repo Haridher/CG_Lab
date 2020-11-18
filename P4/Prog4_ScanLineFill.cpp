@@ -4,6 +4,7 @@
 #include<iostream>
 #include<windows.h>
 
+
 using namespace std;
 float x[100], y[100]; //= { 0,0,20,100,100 }, y[] = { 0,100,50,100,0 };
 
